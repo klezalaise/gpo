@@ -18,7 +18,20 @@ let jourPlusVisites = ventes.reduce((a,b) => a.ventes > b.ventes ? a : b)
 console.log(jourPlusVisites)
 
 //client qui a le plus dépenser
+let clients = [
+                {nom: "client1", depenses:[{achat:"monture1", paiement:129},
+                                            {achat:"monture4", paiement:100}]},
+                {nom: "client2", depenses:[{achat:"monture2", paiement:149},
+                                            {achat:"monture3", paiement:70}]},
+                {nom: "client3", depenses:[{achat:"monture5", paiement:35},
+                                            {achat:"monture4", paiement:299}]}
+              ]
 
+clients.forEach(client =>
+  client.total = client.depenses.reduce((a,b) => a.paiement + b.paiement))
+let plusGrosClient = clients.reduce((a,b) => a.total > b.total ? a : b)
+
+console.log(plusGrosClient)
 //résultat (dans le rouge ou pas)
 
 //monture la plus vendue
