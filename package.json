@@ -1,0 +1,10 @@
+{
+  "name": "gpo",
+  "version": "1.0.0",
+  "description": "Application web de gestion de boutique optique (clients, ventes, stock, monitoring)",
+  "scripts": {
+    "test": "mocha js/test"
+  },
+  "author": "mdl & sgn",
+  "license": "ISC"
+}
