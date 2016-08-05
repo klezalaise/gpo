@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>GPO</title>
-    <script src="js/vue.js"></script>
-    <script src="js/vue-router.min.js"></script>
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/vue-router.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
         <p>
           <a v-link="{ path: '/' }"> Accueil </a>
           <a v-link="{ path: '/clients' }"> Clients </a>
-          <a v-link="{ path: '/stock' }"> Stocks </a> 
+          <a v-link="{ path: '/stock' }"> Stocks </a>
         </p>
     </div>
       <router-view></router-view>
