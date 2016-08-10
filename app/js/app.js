@@ -5,11 +5,6 @@ var ClientVue = Vue.extend({
     template: '<div id="clients">Liste des clients</p>'
 })
 
-// vue des montures
-var MontureVue = Vue.extend({
-    template: '<div id="montures">Liste des montures</p>'
-})
-
 // Vue App
 var App = Vue.extend({})
 
@@ -25,7 +20,7 @@ router.map({
         component: ClientVue
     },
     '/stock': {
-        component: MontureVue
+        component: MODULE_MONTURES.MontureVue
     }
 })
 
