@@ -20,7 +20,7 @@ router.map({
         component: ClientVue
     },
     '/stock': {
-        component: MODULE_MONTURES.MontureVue
+        component: MONTURES_VUE.Vue
     }
 })
 

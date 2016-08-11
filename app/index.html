@@ -21,7 +21,14 @@
     </div>
       <router-view></router-view>
     </div>
+    <template id="template-montures" >
+      <ul>
+        <li v-for="monture in montures">{{monture.name}}</li>
+      </ul>
+    </template>
+
     <script src="js/montures.js"></script>
+    <script src="js/MonturesRepository.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
