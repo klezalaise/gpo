@@ -9,8 +9,8 @@ let MONTURES_REPOSITORY = (function () {
   let montures = [
     {id: 1, name: 'monture 1'},
     {id: 2, name: 'monture 2'},
-    {id: 4, name: 'monture 3'},
-    {id: 3, name: 'monture 4'}
+    {id: 3, name: 'monture 3'},
+    {id: 4, name: 'monture 4'}
   ];
 
   // récupère la liste complète des montures
