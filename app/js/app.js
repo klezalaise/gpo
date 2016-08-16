@@ -20,14 +20,17 @@ router.map({
         component: ClientVue
     },
     '/stock': {
-        component: MONTURES_VUE.Vue
+        name: 'stock',
+        component: MONTURES_VUE.Liste
+    },
+    '/stock/:idmonture': {
+        name: 'stock-fiche',
+        component: MONTURES_VUE.Fiche
     }
 })
 
 // démarrage de l'app
 router.start(App, '#app')
-
-
 
 // initialisation de firebase
 let config = {
@@ -36,6 +39,7 @@ let config = {
   databaseURL: "https://projet-gpo.firebaseio.com",
   storageBucket: "projet-gpo.appspot.com",
 };
+
 firebase.initializeApp(config);
 //firebase.database().ref('montures/').push({
 //  marque: "Rayban",
