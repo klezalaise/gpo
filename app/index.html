@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GPO</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
     <script src="js/lib/vue.js"></script>
     <script src="js/lib/vue-router.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
@@ -14,12 +16,28 @@
 <body>
     <div id="app">
       <div id="menu">
-        <h1>GPO</h1>
-        <p>
-          <a v-link="{ path: '/' }"> Accueil </a>
-          <a v-link="{ path: '/clients' }"> Clients </a>
-          <a v-link="{ name: 'stock' }"> Stocks </a>
-        </p>
+
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                      data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" v-link="{ path: '/' }">GPO</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li v-link-active><a v-link="{ path: '/clients', activeClass: 'active' }">Clients</a></li>
+                <li v-link-active><a v-link="{ path: '/stock', activeClass: 'active' }">Stock</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
       </div>
       <div id="content">
         <router-view></router-view>
@@ -28,6 +46,7 @@
 
     <!-- Template LISTE MONTURES -->
     <template id="template-liste-montures">
+      <h2> Liste des montures </h2>
       <ul>
         <li v-for="monture in montures">
           <a v-link="{ name:'stock-fiche', params: {idmonture:monture.id} }"> {{monture.name}} </a>
@@ -37,7 +56,9 @@
 
     <!-- Template FICHE MONTURES -->
     <template id="template-fiche-montures">
-      <p>Monture : {{monture.id}}/{{monture.name}}</p>
+      <h2> Fiche Monture </h2>
+      <p>Id : {{monture.id}}</p>
+      <p>Nom : {{monture.name}}</p>
     </template>
 
     <!-- app javascript -->
